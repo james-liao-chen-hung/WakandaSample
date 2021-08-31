@@ -9,6 +9,7 @@ namespace API.DTOs
 
         //該拿到的類型 e.g.[Phone]
         [Required]
+        [StringLength(8, MinimumLength = 4)]
         public string Password { get; set; }
     }
 }

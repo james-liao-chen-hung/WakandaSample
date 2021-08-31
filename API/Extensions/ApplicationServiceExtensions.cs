@@ -14,6 +14,7 @@ namespace API.Extensions
             services.AddScoped<ITokenService, TokenService>();
             services.AddDbContext<DataContext>(options =>
             {
+                //DefaultConnection in appsettings.Development.json
                 options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
             });
 
