@@ -22,17 +22,17 @@
     <th scope="col">更新時間</th>
   </tr>
   </thead>
-  <tbody>
-    <th scope="row">1</th>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
+  <tbody *ngFor="let setting of settings; index as i">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{setting.programName}}</td>
+    <td>{{setting.originalFileName}}</td>
+    <td>{{setting.internalName}}</td>
+    <td>{{setting.productName}}</td>
+    <td>{{setting.companyName}}</td>
+    <td>{{setting.description}}</td>
+    <td>{{setting.signatory}}</td>
+    <td>{{setting.productVersion}}</td>
+    <td>{{setting.parameter}}</td>
+    <td>{{setting.updateTime}}</td>
   </tbody>
 </table>
