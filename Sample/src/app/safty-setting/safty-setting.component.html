@@ -1,10 +1,9 @@
 <h1>安全程序設定</h1>
 <button type="button" class="btn btn-outline-dark mr-2">新增</button>
-<button type="button" class="btn btn-outline-dark mr-2">匯入</button>
-<button type="button" class="btn btn-outline-dark mr-2">匯出</button>
+<button mat-raised-button (click)="jsonPathDialog()" type="button" class="btn btn-outline-dark mr-2">匯入</button>
+<button type="button" (click)="outputPathDialog()" class="btn btn-outline-dark mr-2">匯出</button>
 <button type="button" class="btn btn-outline-dark mr-2">套用權限</button>
 <button type="button" class="btn btn-outline-dark mr-2">套用欄位</button>
-
 
 <table class="table table-striped mt-2">
   <thead>

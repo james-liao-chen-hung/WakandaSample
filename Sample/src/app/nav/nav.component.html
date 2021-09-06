@@ -23,6 +23,7 @@
     <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
       <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.userName}}</a>
       <div class="dropdown-menu mt-3" *dropdownMenu>
+        <a class="dropdown-item" routerLink="/member/edit">Edit Profile</a>
         <a class="dropdown-item">變更管理者密碼</a>
         <a class="dropdown-item">卸載密碼設定</a>
         <a class="dropdown-item">V-Wakanda Tunnel 伺服器設定</a>
