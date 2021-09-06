@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
@@ -27,6 +27,8 @@ import { JsonPathDialogComponent } from './safty-setting/json-path-dialog/json-p
 import { MatDialogModule } from '@angular/material/dialog';
 import { OutputJsonDialogComponent } from './safty-setting/output-json-dialog/output-json-dialog/output-json-dialog.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { DateInputComponent } from './_forms/date-input/date-input.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MemberCardComponent,
     MemberEditComponent,
     JsonPathDialogComponent,
-    OutputJsonDialogComponent
+    OutputJsonDialogComponent,
+    TextInputComponent,
+    DateInputComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     SharesModule,
     MatDialogModule,
     NgxSpinnerModule,
