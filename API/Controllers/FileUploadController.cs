@@ -36,7 +36,6 @@ namespace API.Controllers
                 {
                     using(FileStream fileStream = System.IO.File.Create(uploadPath + "data.json"))
                     {
-                    
                         objFile.files.CopyTo(fileStream);
                         fileStream.Flush();
                         return new UploadDto { 
@@ -57,6 +56,28 @@ namespace API.Controllers
             {
                 return new UploadDto {
                     Message = "Upload " + objFile.files.FileName + "failed",
+                    IsUpload = false
+                };
+            }
+        }
+
+        [HttpPost("json")]
+        public async Task<UploadDto> getJsonValue([FromForm] FileUploadAPI objFile)
+        {
+            if(objFile.files.Length > 0)
+            {
+                using(Stream stream = objFile.files.OpenReadStream())
+                {
+                    StreamReader streamReader = new StreamReader(stream);
+                    return new UploadDto { 
+                        Message = await streamReader.ReadToEndAsync(),
+                        IsUpload = true
+                    };
+                }
+            }
+            else {
+                return new UploadDto { 
+                    Message = "",
                     IsUpload = false
                 };
             }

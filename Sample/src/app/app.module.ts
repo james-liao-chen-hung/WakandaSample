@@ -25,7 +25,6 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { JsonPathDialogComponent } from './safty-setting/json-path-dialog/json-path-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { OutputJsonDialogComponent } from './safty-setting/output-json-dialog/output-json-dialog/output-json-dialog.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { DateInputComponent } from './_forms/date-input/date-input.component';
@@ -47,7 +46,6 @@ import { DateInputComponent } from './_forms/date-input/date-input.component';
     MemberCardComponent,
     MemberEditComponent,
     JsonPathDialogComponent,
-    OutputJsonDialogComponent,
     TextInputComponent,
     DateInputComponent
   ],

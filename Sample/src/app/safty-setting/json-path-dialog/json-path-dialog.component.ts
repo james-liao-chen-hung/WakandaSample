@@ -1,4 +1,4 @@
-import { upload } from 'src/app/_models/upload';
+import { upload } from './../../_models/upload';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -11,12 +11,12 @@ import { environment } from 'src/environments/environment';
 })
 export class JsonPathDialogComponent {
   baseUrl = environment.apiUrl;
-  selectedFile: File;
+  selectedFile: File = null;
 
   constructor(
     public dialogRef: MatDialogRef<JsonPathDialogComponent>,
     private http: HttpClient,
-    @Inject(MAT_DIALOG_DATA) public message: upload
+    @Inject(MAT_DIALOG_DATA) public data: upload
     ) { }
 
   onNoClick(): void {
@@ -26,8 +26,10 @@ export class JsonPathDialogComponent {
   onOkClick() {
     const fd = new FormData();
     fd.append("files", this.selectedFile, this.selectedFile.name);
-    this.http.post<upload>( this.baseUrl + 'fileupload', fd).subscribe(res => {
-      this.dialogRef.close(res);
+    this.http.post<upload>( this.baseUrl + 'fileupload/json', fd).subscribe(res => {
+      this.data = res;
+      console.log(this.data);
+      this.dialogRef.close(this.data);
     })
   }
 

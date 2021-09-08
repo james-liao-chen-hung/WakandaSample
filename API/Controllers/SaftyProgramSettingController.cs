@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.Data;
+using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,9 +18,26 @@ namespace API.Controllers
         }
 
         [HttpGet("safty-program-setting")]
-        public async Task<ActionResult<IEnumerable<SaftyProgramSetting>>> GetSettings()
+        public async Task<ActionResult<IEnumerable<DownloadWithoutIdDto>>> GetSettings()
         {
-            return await _context.Settings.ToListAsync();
+            var settings = await _context.Settings.ToListAsync();
+            var data = new List<DownloadWithoutIdDto>();
+            foreach (var setting in settings)
+            {
+                data.Add(new DownloadWithoutIdDto {
+                    ProgramName = setting.ProgramName,
+                    OriginalFileName = setting.OriginalFileName,
+                    InternalName = setting.InternalName,
+                    ProductName = setting.ProductName,
+                    CompanyName = setting.CompanyName,
+                    Description = setting.Description,
+                    Signatory = setting.Signatory,
+                    ProductVersion = setting.ProductVersion,
+                    Parameter = setting.Parameter,
+                    UpdateTime = setting.UpdateTime
+                });
+            }
+            return data;
         }
 
         [HttpPost("safty-program-setting")]

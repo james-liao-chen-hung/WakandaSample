@@ -9,21 +9,21 @@
       <input type="radio" value="female" formControlName='gender' class="ml-3"> Female
     </label>
   </div>
-  <app-text-input [formControl]='registerFrom.controls["userName"]'
+  <app-text-input [formControl]='$any(registerFrom.controls["userName"])'
                   [label]='"Username"'></app-text-input>
-  <app-text-input [formControl]='registerFrom.controls["knownAs"]'
+  <app-text-input [formControl]='$any(registerFrom.controls["knownAs"])'
                   [label]='"Known As"'></app-text-input>
-  <app-date-input [formControl]='registerFrom.controls["dateOfBirth"]'
+  <app-date-input [formControl]='$any(registerFrom.controls["dateOfBirth"])'
                   [label]='"Date Of Birth"'
                   [maxDate]='maxDate'></app-date-input>
-  <app-text-input [formControl]='registerFrom.controls["city"]'
+  <app-text-input [formControl]='$any(registerFrom.controls["city"])'
                   [label]='"City"'></app-text-input>
-  <app-text-input [formControl]='registerFrom.controls["country"]'
+  <app-text-input [formControl]='$any(registerFrom.controls["country"])'
                   [label]='"Country"'></app-text-input>
-  <app-text-input [formControl]='registerFrom.controls["password"]'
+  <app-text-input [formControl]='$any(registerFrom.controls["password"])'
                   [label]='"Password"'
                   [type]='"password"'></app-text-input>
-  <app-text-input [formControl]='registerFrom.controls["confirmPassword"]'
+  <app-text-input [formControl]='$any(registerFrom.controls["confirmPassword"])'
                   [label]='"Confirm Password"'
                   [type]='"password"'></app-text-input>
 

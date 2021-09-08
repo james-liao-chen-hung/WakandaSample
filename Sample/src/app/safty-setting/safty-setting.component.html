@@ -1,7 +1,7 @@
 <h1>安全程序設定</h1>
 <button type="button" class="btn btn-outline-dark mr-2">新增</button>
 <button mat-raised-button (click)="jsonPathDialog()" type="button" class="btn btn-outline-dark mr-2">匯入</button>
-<button type="button" (click)="outputPathDialog()" class="btn btn-outline-dark mr-2">匯出</button>
+<button type="button" (click)="downloadFile()" class="btn btn-outline-dark mr-2">匯出</button>
 <button type="button" class="btn btn-outline-dark mr-2">套用權限</button>
 <button type="button" class="btn btn-outline-dark mr-2">套用欄位</button>
 
@@ -21,7 +21,7 @@
     <th scope="col">更新時間</th>
   </tr>
   </thead>
-  <tbody *ngFor="let setting of settings; index as i">
+  <tbody *ngFor="let setting of data; index as i">
     <th scope="row">{{i + 1}}</th>
     <td>{{setting.programName}}</td>
     <td>{{setting.originalFileName}}</td>
